@@ -26,6 +26,8 @@ const productRoutes = require('./routes/productRoutes');
 app.use('/api/products', productRoutes);
 const procurementRoutes = require('./routes/procurementRoutes');
 app.use('/api/procurements', procurementRoutes);
+const inventoryRoutes = require('./routes/inventoryRoutes');
+app.use('/api/inventory', inventoryRoutes);
 app.get('/api/test-protected', protect, (req, res) => {
   res.json({ message: `Welcome, user ${req.user.userId}! Your role is ${req.user.role}.` });
 });
