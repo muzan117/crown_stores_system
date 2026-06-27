@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crown Stores - Sales Dashboard</title>
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <link rel="stylesheet" href="../css/sales.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-brand">👑 Crown Stores</div>
+    <div class="nav-user">
+      <span id="userName"></span>
+      <span class="role-badge">Sales Agent</span>
+      <button onclick="logout()" class="btn-logout">Logout</button>
+    </div>
+  </nav>
+
+  <div class="dashboard">
+    <h2>Sales Dashboard</h2>
+    <p class="subtitle">Process Cash Sales</p>
+
+    <div class="sale-card">
+      <h3>New Sale</h3>
+      <div class="sale-form">
+        <div class="form-group">
+          <label>Product</label>
+          <select id="productSelect">
+            <option value="">Select Product</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Available Stock</label>
+          <input type="text" id="availableStock" readonly placeholder="Select product first">
+        </div>
+        <div class="form-group">
+          <label>Unit Price</label>
+          <input type="text" id="unitPrice" readonly placeholder="Auto-filled">
+        </div>
+        <div class="form-group">
+          <label>Quantity</label>
+          <input type="number" id="quantity" min="1" placeholder="Enter quantity">
+        </div>
+        <div class="form-group">
+          <label>Total Amount</label>
+          <input type="text" id="totalAmount" readonly placeholder="Auto-calculated">
+        </div>
+        <div class="form-group">
+          <label>Amount Paid</label>
+          <input type="number" id="amountPaid" placeholder="Enter amount paid">
+        </div>
+      </div>
+
+      <div id="changeDisplay" class="change-display" style="display:none">
+        Change: $<span id="changeAmount">0</span>
+      </div>
+
+      <div id="saleMsg" class="sale-msg"></div>
+
+      <button onclick="processSale()" class="btn-sale">Complete Sale</button>
+    </div>
+
+    <div class="receipt-section" id="receiptSection" style="display:none">
+      <h3>Receipt</h3>
+      <div id="receiptContent" class="receipt-content"></div>
+      <button onclick="printReceipt()" class="btn-print">Print Receipt</button>
+    </div>
+  </div>
+
+  <script src="../js/sales.js"></script>
+</body>
+</html>

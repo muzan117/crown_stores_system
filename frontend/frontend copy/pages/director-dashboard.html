@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crown Stores - Director Dashboard</title>
+  <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-brand">👑 Crown Stores</div>
+    <div class="nav-user">
+      <span id="userName"></span>
+      <span class="role-badge">Director</span>
+      <button onclick="logout()" class="btn-logout">Logout</button>
+    </div>
+  </nav>
+
+  <div class="dashboard">
+    <h2>Director Dashboard</h2>
+    <p class="subtitle">Business Overview & Reports</p>
+
+    <div class="stats-grid" id="statsGrid">
+      <div class="stat-card">
+        <div class="stat-icon">💰</div>
+        <div class="stat-info">
+          <h3 id="totalRevenue">Loading...</h3>
+          <p>Total Revenue</p>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">🛒</div>
+        <div class="stat-info">
+          <h3 id="totalSales">Loading...</h3>
+          <p>Total Sales</p>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">📦</div>
+        <div class="stat-info">
+          <h3 id="totalProducts">Loading...</h3>
+          <p>Total Products</p>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">⚠️</div>
+        <div class="stat-info">
+          <h3 id="lowStockCount">Loading...</h3>
+          <p>Low Stock Alerts</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="reports-section">
+      <h3>Reports</h3>
+      <div class="report-buttons">
+        <button onclick="viewReport('daily-sales')" class="btn-report">📊 Daily Sales Report</button>
+        <button onclick="viewReport('inventory')" class="btn-report">📦 Inventory Report</button>
+        <button onclick="viewReport('procurement')" class="btn-report">🚚 Procurement Report</button>
+      </div>
+      <div id="reportData" class="report-data"></div>
+    </div>
+  </div>
+
+  <script src="../js/dashboard.js"></script>
+  <script src="../js/director.js"></script>
+</body>
+</html>

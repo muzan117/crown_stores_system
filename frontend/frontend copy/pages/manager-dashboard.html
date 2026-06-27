@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crown Stores - Manager Dashboard</title>
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <link rel="stylesheet" href="../css/manager.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-brand">👑 Crown Stores</div>
+    <div class="nav-user">
+      <span id="userName"></span>
+      <span class="role-badge">Branch Manager</span>
+      <button onclick="logout()" class="btn-logout">Logout</button>
+    </div>
+  </nav>
+
+  <div class="dashboard">
+    <h2>Manager Dashboard</h2>
+    <p class="subtitle">Branch Operations Management</p>
+
+    <div class="tabs">
+      <button class="tab-btn active" onclick="showTab('categories')">Categories</button>
+      <button class="tab-btn" onclick="showTab('products')">Products</button>
+      <button class="tab-btn" onclick="showTab('procurement')">Procurement</button>
+      <button class="tab-btn" onclick="showTab('inventory')">Inventory</button>
+      <button class="tab-btn" onclick="showTab('sales')">Sales</button>
+    </div>
+
+    <div id="categories" class="tab-content active">
+      <div class="section-header">
+        <h3>Categories</h3>
+        <button onclick="showAddCategory()" class="btn-add">+ Add Category</button>
+      </div>
+      <div id="addCategoryForm" class="form-card" style="display:none">
+        <input type="text" id="categoryName" placeholder="Category Name">
+        <input type="text" id="categoryDesc" placeholder="Description">
+        <button onclick="addCategory()" class="btn-save">Save</button>
+        <button onclick="hideAddCategory()" class="btn-cancel">Cancel</button>
+      </div>
+      <div id="categoriesList"></div>
+    </div>
+
+    <div id="products" class="tab-content">
+      <div class="section-header">
+        <h3>Products</h3>
+        <button onclick="showAddProduct()" class="btn-add">+ Add Product</button>
+      </div>
+      <div id="addProductForm" class="form-card" style="display:none">
+        <select id="productCategory"></select>
+        <input type="text" id="productName" placeholder="Product Name">
+        <input type="text" id="productDesc" placeholder="Description">
+        <input type="number" id="costPrice" placeholder="Cost Price">
+        <input type="number" id="sellingPrice" placeholder="Selling Price">
+        <input type="number" id="quantity" placeholder="Initial Quantity">
+        <input type="number" id="reorderLevel" placeholder="Reorder Level">
+        <button onclick="addProduct()" class="btn-save">Save</button>
+        <button onclick="hideAddProduct()" class="btn-cancel">Cancel</button>
+      </div>
+      <div id="productsList"></div>
+    </div>
+
+    <div id="procurement" class="tab-content">
+      <div class="section-header">
+        <h3>Procurement</h3>
+        <button onclick="showAddProcurement()" class="btn-add">+ Add Procurement</button>
+      </div>
+      <div id="addProcurementForm" class="form-card" style="display:none">
+        <select id="procurementProduct"></select>
+        <input type="text" id="supplierName" placeholder="Supplier Name">
+        <input type="number" id="quantityReceived" placeholder="Quantity Received">
+        <input type="number" id="procurementCost" placeholder="Cost Price">
+        <input type="text" id="branch" placeholder="Branch Name">
+        <button onclick="addProcurement()" class="btn-save">Save</button>
+        <button onclick="hideAddProcurement()" class="btn-cancel">Cancel</button>
+      </div>
+      <div id="procurementList"></div>
+    </div>
+
+    <div id="inventory" class="tab-content">
+      <div class="section-header">
+        <h3>Inventory</h3>
+      </div>
+      <div id="inventoryList"></div>
+    </div>
+
+    <div id="sales" class="tab-content">
+      <div class="section-header">
+        <h3>Sales History</h3>
+      </div>
+      <div id="salesList"></div>
+    </div>
+  </div>
+
+  <script src="../js/dashboard.js"></script>
+  <script src="../js/manager.js"></script>
+</body>
+</html>
