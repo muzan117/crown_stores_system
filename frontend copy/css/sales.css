@@ -108,3 +108,56 @@
   font-size: 14px;
   font-weight: 600;
 }
+.scan-card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  margin-bottom: 24px;
+}
+
+.scan-card h3 {
+  font-size: 18px;
+  color: #1a1a2e;
+  margin-bottom: 16px;
+}
+
+.btn-scan {
+  background: #0f3460;
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+.btn-stop {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.viewport {
+  width: 100%;
+  max-width: 400px;
+  margin: 16px 0;
+}
+
+.viewport canvas, .viewport video {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.scan-result {
+  color: #27ae60;
+  font-weight: 600;
+  margin-top: 8px;
+}
